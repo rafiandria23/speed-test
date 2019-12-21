@@ -60,8 +60,8 @@
  */
 
 function getGuildMemberInfo(members) {
-    // Write your code here
-
+  // Write your code here
+  
 }
 
 console.log(getGuildMemberInfo([

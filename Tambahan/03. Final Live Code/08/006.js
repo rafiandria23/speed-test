@@ -55,7 +55,6 @@ RULES
 
 function oddPairFirstLast(num) {
     // Write your code here
-
 }
 
 console.log(oddPairFirstLast(2345))// 25

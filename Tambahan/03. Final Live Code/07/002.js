@@ -29,7 +29,27 @@ output: jumlah F: 2, jumlah H: 1, jumlah E: 0. Dan totalnya adalah: 2.5
 
 function galonChecker(array) {
     // Write your code here
+    if (array.length === 0) {
+        return 'NO DATA';
+    }
     
+    let f = 0;
+    let h = 0;
+    let e = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'F') {
+            f++;
+        }
+        if (array[i] === 'H') {
+            h++;
+        }
+        if (array[i] === 'E') {
+            e++
+        }
+    }
+
+    return `jumlah F: ${f}, jumlah H: ${h}, jumlah E: ${e}. Dan totalnya adalah: ${f + (h / 2)}`;
 }
 
 console.log(galonChecker(['F','H','F']));

@@ -69,7 +69,7 @@ RULES:
 **/
 
 function cariIndex(numbers, numSearch, yangKe) {
-    // Write your code here
+  // Write your code here
 
 }
 

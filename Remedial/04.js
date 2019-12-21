@@ -33,7 +33,30 @@ tinggi kotak sesuai dengan nilai variable height!
 
 function drawSymbolicColsBox(num) {
     // Write your code here
-    
+    // @ odd
+    // $ even
+    // * 3
+
+    let result = '';
+
+    for (let i = 1; i <= num * num; i++) {
+        if (i % 2 !== 0) {
+            if (i % 3 === 0) {
+                result += '*' + ' ';
+            }
+            else {
+                result += '@' + ' ';
+            }
+        }
+        else if (i % 2 === 0) {
+            result += '$' + ' ';
+        }
+
+        if (result.length % num === 0) {
+            console.log(result);
+            result = '';
+        }
+    }
 }
 
 

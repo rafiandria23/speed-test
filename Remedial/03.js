@@ -21,7 +21,21 @@ output : 'hALO'
 
 function tukarBesarKecil(kalimat) {
     // Write your code here
+    
+    if (kalimat.length === 0) {
+        return '';
+    }
 
+    let result = '';
+    
+    if (kalimat[0] === kalimat[0].toLowerCase()) {
+        result += kalimat[0].toUpperCase();
+    }
+    else if (kalimat[0] === kalimat[0].toUpperCase()) {
+        result += kalimat[0].toLowerCase()
+    }
+
+    return result += tukarBesarKecil(kalimat.slice(1));
 }
 
 

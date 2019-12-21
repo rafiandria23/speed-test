@@ -46,9 +46,107 @@
     }
 */
 
+const bubbleSort = function (arr) {
+  let len = arr.length - 1;
+  for (let i = len; i >= 0; i--) {
+    for (let j = 1; j <= i; j++) {
+      let temp = arr[j - 1];
+      arr[j - 1] = arr[j];
+      arr[j] = temp;
+    }
+  }
+  return arr;
+}
+
+const selectionSort = function (arr) {
+  var minIdx, temp,
+    len = arr.length;
+  for (var i = 0; i < len; i++) {
+    minIdx = i;
+    for (var j = i + 1; j < len; j++) {
+      if (arr[j] < arr[minIdx]) {
+        minIdx = j;
+      }
+    }
+    temp = arr[i];
+    arr[i] = arr[minIdx];
+    arr[minIdx] = temp;
+  }
+  return arr;
+}
+
+const getAverage = function (arr) {
+  let temp = 0;
+  for (let i = 0; i < arr.length; i++) {
+    temp += arr[i];
+  }
+  let result = String(temp / arr.length);
+  let finalResult = '';
+  let check = 0;
+  for (let j = 0; j < result.length; j++) {
+    if (result[j] === '.') {
+      if (result[j+1] < 5) {
+        break;
+      }
+      else if (result[j+1] >= 5) {
+        check++;
+        break;
+      }
+    }
+    finalResult += result[j]
+  }
+
+  if (check === 0) {
+    return Number(finalResult);
+  }
+  else if (check === 1) {
+    return Number(finalResult) + 1;
+  }
+}
+
 function getMemberSummary(member) {
     // Write your code here
-        
+  let result = {};
+  result.total_member = member.length;
+  result.oldest_member = false;
+  result.youngest_member = false;
+
+  if (member.length === 1) {
+    result.oldest_member = member;
+    result.youngest_member = member;
+    result.average_member_age = member[0].age;
+    return result;
+  }
+  else if (member.length === 0) {
+    return 'NO DATA';
+  }
+
+  let memberAges = [];
+
+  for (let i = 0; i < member.length; i++) {
+    memberAges.push(member[i].age);
+  }
+
+  let memberAgesSorted = selectionSort(memberAges);
+
+  for (let j = 0; j < member.length; j++) {
+    if (member[j].age === memberAgesSorted[0]) {
+      result.youngest_member = {
+        full_name: member[j].first_name + ' ' + member[j].last_name,
+        age: member[j].age
+      };
+    }
+    else if (member[j].age === memberAgesSorted[memberAgesSorted.length - 1]) {
+      result.oldest_member = {
+        full_name: member[j].first_name + ' ' + member[j].last_name,
+        age: member[j].age
+      };
+    }
+  }
+
+  result.average_member_age = getAverage(memberAges);
+
+  return result;
 }
 
 console.log(getMemberSummary([{

@@ -12,7 +12,20 @@ Yang berisi daftar nama penumpang dan tempat duduk penumpang.
 
 function trainSeating (penumpang) {
     // Write your code here
+  let result = {};
+  result['VVIP'] = [];
+  result['VIP'] = [];
+  result['Regular'] = [];
 
+  for (let i = 0; i < penumpang.length; i++) {
+    for (const key in result) {
+      if (penumpang[i].gerbong === key) {
+        result[key].push(penumpang[i]);
+      }
+    }
+  }
+
+  return result;
 }
 
 console.log(trainSeating([

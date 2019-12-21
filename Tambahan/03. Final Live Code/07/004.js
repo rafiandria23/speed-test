@@ -53,7 +53,25 @@ NOTE:
 
 function squareNumber(num) {
     // Write your code here
+  let result = [];
 
+  for (let i = 1; i <= 1; i++) {
+    let temp = [];
+    
+    for (let j = 1; j <= num*num; j++) {
+      temp.push(j);
+      if ((i % 2 !== 0) && (temp.length === 3)) {
+        result.push(temp);
+        temp = [];
+      }
+      else if ((i % 2 === 0) && (temp.length === 3)) {
+        result.push(temp.reverse());
+        temp = [];
+      }
+    }
+  }
+
+  return result;
 }
 
 

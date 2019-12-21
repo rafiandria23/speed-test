@@ -20,7 +20,21 @@ output: [ [ 1 ] , [ 2, 2 ] ]
 
 function piramidaArray(number) {
     // Write your code here
-    
+    if (isNaN(number) === true || number === 0) {
+        return 0;
+    }
+
+    let result = [];
+
+    for (let i = 0; i < number; i++) {
+        let temp = [];
+        for (let j = 1; j <= i; j++) {
+            temp.push(i);
+        }
+        result.push(temp);
+    }
+
+    return result;
 }
 
 console.log(piramidaArray(2)); // [ [], [ 1 ] ]

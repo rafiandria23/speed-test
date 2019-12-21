@@ -57,7 +57,7 @@ RULES:
 
 function faktorPrima(num) {
     // Write your code here
-
+  
 }
 
 console.log(faktorPrima(90)); // 2 pangkat 1, 3 pangkat 2, 5 pangkat 1

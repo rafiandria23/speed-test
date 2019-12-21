@@ -18,9 +18,26 @@
 
 function consonantCounterRecursive(sentences) {
     // Write your code here
+  if (sentences.length === 0) {
+    return sentences;
+  }
+  
+  let vowels = 'aiueo';
+  let lowSentences = sentences.toLowerCase();
+  let result = 0;
 
+  for (let i = 0; i < vowels.length; i++) {
+    if (vowels[i] === lowSentences[0]) {
+      consonantCounterRecursive(sentences.slice(1));
+    }
+    else {
+      result++;
+    }
+  }
+
+  return result;
 }
 
-console.log(consonantCounterRecursive('alDi Suka MakAn baksO')) //13
+console.log(consonantCounterRecursive('alDi Suka MakAn baksO')) //10
 console.log(consonantCounterRecursive('AziZy')) // 3
 console.log(consonantCounterRecursive('awt6an')) // 3

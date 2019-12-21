@@ -25,9 +25,40 @@ STORE "result" with the value of empty Array
 
 */
 
+function selectionSort(arr) {
+  var minIdx, temp,
+    len = arr.length;
+  for (var i = 0; i < len; i++) {
+    minIdx = i;
+    for (var j = i + 1; j < len; j++) {
+      if (arr[j] < arr[minIdx]) {
+        minIdx = j;
+      }
+    }
+    temp = arr[i];
+    arr[i] = arr[minIdx];
+    arr[minIdx] = temp;
+  }
+  return arr;
+}
+
 function missingNumbers(numbers) {
     // Write your code here
+  let input = selectionSort(numbers);
+  let result = [];
 
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = input[0]; j <= input[input.length - 1]; j++) {
+      if (j !== numbers[i]) {
+        result.push(j);
+      }
+      else {
+        break;
+      }
+    }
+  }
+
+  return result;
 }
 
 console.log(missingNumbers([1, 5, 10, 7, 6])); // [2, 3, 4, 8, 9]

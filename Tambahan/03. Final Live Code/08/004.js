@@ -18,8 +18,8 @@
 **/
 
 function halfTriangle(height, direction) {
-    // Write your code here
-
+  // Write your code here
+  
 }
 
 console.log(halfTriangle(5, 'up'));

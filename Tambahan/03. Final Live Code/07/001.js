@@ -24,3 +24,14 @@ WHILE i < 8
     ADD num by 1
 */
 // Write your code here
+
+/* 
+FUNCTION primeNumber gets num as parameter
+  IF num is less than 2
+    DISPLAY 0
+  ELSE IF num is equal to 2
+    DISPLAY num
+  ELSE
+    FOR i is equal to 0, i is less than equal to num, i is added by 1
+      IF num mod i is equal to 
+*/

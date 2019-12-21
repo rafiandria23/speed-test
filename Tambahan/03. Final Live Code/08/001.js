@@ -24,7 +24,7 @@
 
 function tambahDash(str) {
     // Write your code here
-
+  
 }
 
 console.log(tambahDash('454793')); // '4547-9-3'
